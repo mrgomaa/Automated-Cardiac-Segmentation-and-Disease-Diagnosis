@@ -10,7 +10,7 @@ import pprint
 import time, argparse
 import collections
 sys.path.insert(0,'../data_loaders/')
-from hdf5_loader import DataIterator
+# from hdf5_loader import DataIterator
 from helpers.utils import imshow, progress_bar
 
 
