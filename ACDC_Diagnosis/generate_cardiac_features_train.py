@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import sys
 # print sys.path
-sys.path.append("../") 
+#sys.path.append("../") 
 # Custom
 from utils_heart import * 
 
@@ -22,7 +22,7 @@ def calculate_metrics_for_training(data_path_list, name='train'):
 		patient_folder_list = os.listdir(data_path)
 		# print (patient_folder_list)
 		for patient in patient_folder_list:
-			print patient
+			print(patient)
 			patient_folder_path = os.path.join(data_path, patient)
 			config_file_path = os.path.join(patient_folder_path, 'Info.cfg')
 			patient_data = {}
@@ -109,10 +109,10 @@ def calculate_metrics_for_training(data_path_list, name='train'):
 
 if __name__ == '__main__':
 	#Path to ACDC training set
-	train_path = ['../../processed_acdc_dataset/dataset/train_set']
-	validation_path = ['../../processed_acdc_dataset/dataset/validation_set', '../../processed_acdc_dataset/dataset/test_set']
-	full_train = ['../../processed_acdc_dataset/dataset/train_set', '../../processed_acdc_dataset/dataset/validation_set', 
-				  '../../processed_acdc_dataset/dataset/test_set']
+	train_path = ['processed_acdc_dataset/dataset/train_set']
+	validation_path = ['processed_acdc_dataset/dataset/validation_set', 'processed_acdc_dataset/dataset/test_set']
+	full_train = ['processed_acdc_dataset/dataset/train_set', 'processed_acdc_dataset/dataset/validation_set', 
+				  'processed_acdc_dataset/dataset/test_set']
 	calculate_metrics_for_training(train_path, name='train')
 	calculate_metrics_for_training(validation_path, name='validation')
 	calculate_metrics_for_training(full_train, name='training')
