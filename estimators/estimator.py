@@ -9,10 +9,11 @@ import os, sys
 import pprint
 import time, argparse
 import collections
-sys.path.insert(0,'../data_loaders/')
-# from hdf5_loader import DataIterator
+#sys.path.insert(0,'../data_loaders/')
+import hdf5_loader
 from helpers.utils import imshow, progress_bar
-
+import importlib
+importlib.reload(hdf5_loader)
 
 class Estimator(object):
     """docstring for Estimator"""
@@ -20,9 +21,9 @@ class Estimator(object):
         self.model = model
         self.conf = conf
         print ('Initializing iterators for dataloaders')
-        self.train_iterator = DataIterator(conf.data_path, conf.transformation_params, 
+        self.train_iterator = hdf5_loader.DataIterator(conf.data_path, conf.transformation_params, 
                                 mode = 'train', batch_size = conf.batch_size, num_threads=4)
-        self.valid_iterator = DataIterator(conf.data_path, conf.transformation_params,
+        self.valid_iterator = hdf5_loader.DataIterator(conf.data_path, conf.transformation_params,
                                 mode = 'valid', batch_size = conf.batch_size, num_threads=4)
         print ('Training & Validation Batches', self.train_iterator.steps, self.valid_iterator.steps)
 
