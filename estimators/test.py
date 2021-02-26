@@ -11,7 +11,7 @@ import pandas as pd
 from config import *
 from test_utils import *
 
-sys.path.insert(0,'../models/')
+#sys.path.insert(0,'../models/')
 from network import *
 from network_ops import *
 
@@ -39,11 +39,11 @@ if __name__ == "__main__":
         # gt_available=False -> Implies Ground Truth available for benchmarking on validation or test set
         # Then the metrics reported in the paper are calculated
         # gt_available = True
-        # final_test_data_path = ['../../processed_acdc_dataset/dataset/test_set',
-        #                         '../../processed_acdc_dataset/dataset/validation_set']
+        final_test_data_path = ['processed_acdc_dataset/dataset/test_set',
+                               'processed_acdc_dataset/dataset/validation_set']
 
         # Actual ACDC testing dataset 
-        final_test_data_path = ['../../ACDC_DataSet/testing']
+        #final_test_data_path = ['../../ACDC_DataSet/testing']
         gt_available = False
 
         inputs = tf.placeholder(tf.float32, shape=(None, None, None, conf.num_channels))

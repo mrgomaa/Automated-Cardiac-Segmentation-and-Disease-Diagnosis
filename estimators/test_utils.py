@@ -14,11 +14,11 @@ from collections import OrderedDict
 import nibabel as nib
 import tensorflow as tf
 
-sys.path.append("../helpers")
-from utils import *
-sys.path.insert(0,'../data_loaders/')
+#sys.path.append("../helpers")
+from helpers.utils import *
+#sys.path.insert(0,'../data_loaders/')
 from data_augmentation import *
-sys.path.insert(0,'../data_preprocess/')
+#sys.path.insert(0,'../data_preprocess/')
 from acdc_data_preparation import extract_roi_stddev
 rng = np.random.RandomState(40)
 
