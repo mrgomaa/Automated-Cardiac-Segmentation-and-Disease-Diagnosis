@@ -35,8 +35,7 @@ if __name__ == "__main__":
     for model in models:   
         saved_model_dir = os.path.join(save_dir, model.split('/')[0]) 
         os.makedirs(saved_model_dir)
-        # model_path = os.path.join(conf.output_dir, conf.run_name, model)
-        model_path = model
+        model_path = os.path.join(conf.output_dir, conf.run_name, model)
         # gt_available=False -> Implies Ground Truth available for benchmarking on validation or test set
         # Then the metrics reported in the paper are calculated
         # gt_available = True

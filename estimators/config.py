@@ -10,7 +10,7 @@ class conf(object):
 				batch_size = 16,
 				num_class = 4,
 				num_channels = 1,
-				num_epochs = 250,
+				num_epochs = 10,
 				learning_rate = 1e-3,
 				prediction_batch_size = 16,
 				load_pretrained_model_from = None,
