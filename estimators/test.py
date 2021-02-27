@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # models = ['best_model/latest.ckpt', 'best_model_class1/latest.ckpt', 'best_model_class2/latest.ckpt',
     #           'best_model_class3/latest.ckpt']
     # Prediction based on the model with best dice score for MYO class on held out validation set
-    models = ['best_model_class2/latest.ckpt']
+    models = ['./best_model_class2/latest.ckpt']
 
     for model in models:   
         saved_model_dir = os.path.join(save_dir, model.split('/')[0]) 
